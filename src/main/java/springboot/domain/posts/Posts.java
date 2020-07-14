@@ -3,13 +3,14 @@ package springboot.domain.posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import springboot.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Getter//Lombok annotation 클래스 내 모든 필드의 Getter 메소드 자동 생성
 @NoArgsConstructor // Lombok annotation 기본생성자 자동 추가 = public post(){ }
 @Entity//JPA annotation 테이블과 링크될 클래스임을 나타냄
-public class Posts { //DB의 테이블과 매칭될 클래스 (Entity class)
+public class Posts extends BaseTimeEntity { //DB의 테이블과 매칭될 클래스 (Entity class)
 
     @Id//해당 테이블의 PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY)// PK의 생성규칙
@@ -24,11 +25,17 @@ public class Posts { //DB의 테이블과 매칭될 클래스 (Entity class)
     private String author;
 
     @Builder// 해당 클래스의 빌더 패턴 클래스 생성성
-   public Posts(String title, String content, String author){
+    public Posts(String title, String content, String author){
         this.title = title;
         this.content = content;
         this.author = author;
     }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
 }
 /* getter/setter를 무작정 생성할 경우 해당 클래스의 인스턴스 값들이 언제 어디서 변해야하는지 코드상으로 명확하게 구분할 수가 없게됨
     > 차후 기능 변경 시 복잡해짐
