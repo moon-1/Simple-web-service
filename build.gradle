@@ -25,7 +25,6 @@ repositories {
 }
 
 dependencies {
-    compile('javax.xml.bind:jaxb-api:2.3.0')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')//spring data jpa 추상화 라이브러리
@@ -33,4 +32,9 @@ dependencies {
     runtime('org.springframework.boot:spring-boot-devtools')
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    //compile 'org.hibernate:hibernate-core:4.1.4.Final'
+    //compile 'org.hibernate:hibernate-entitymanager:5.2.3.Final'
+    compile 'org.javassist:javassist:3.25.0-GA'
+    //compile 'javax.xml.bind:jaxb-api:2.3.1'
+
 }
