@@ -37,6 +37,8 @@ public class Posts extends BaseTimeEntity { //DB의 테이블과 매칭될 클�
     }
 
 }
+
+
 /* getter/setter를 무작정 생성할 경우 해당 클래스의 인스턴스 값들이 언제 어디서 변해야하는지 코드상으로 명확하게 구분할 수가 없게됨
     > 차후 기능 변경 시 복잡해짐
 
