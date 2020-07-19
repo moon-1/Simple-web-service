@@ -7,7 +7,6 @@ import springboot.web.dto.PostsResponseDto;
 import springboot.web.dto.PostsSaveRequestDto;
 import springboot.web.dto.PostsUpdateRequestDto;
 
-
 @RequiredArgsConstructor
 @RestController
 public class PostsApiController {
